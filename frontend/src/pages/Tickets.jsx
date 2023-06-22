@@ -33,15 +33,15 @@ function Tickets() {
       <BackButton url="/" />
       <h1>Tickets</h1>
       <div className="tickets">
-        <div className="ticket headings">
+        <div className="ticket-headings">
           <div>Date</div>
           <div>Product</div>
           <div>Status</div>
           <div></div>
-          {tickets.map((ticket) => {    
-            <TicketItem key={ticket._id} ticket={ticket} />
-          })}
         </div>
+        {tickets.map((ticket) =>
+          <TicketItem key={ticket._id} ticket={ticket} />
+        )}
       </div>
     </>
   );

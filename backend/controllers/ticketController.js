@@ -51,7 +51,7 @@ const getTicket = asyncHandler(async (req, res) => {
 // @route   POST /api/tickets
 // @access  Private
 const createTicket = asyncHandler(async (req, res) => {
-  const { product, description } = request.body;
+  const { product, description } = req.body;
 
   if (!product || !description) {
     res.status(400);
@@ -66,10 +66,13 @@ const createTicket = asyncHandler(async (req, res) => {
     throw new Error("User not found");
   }
 
+  console.log(product);
+  console.log(description);
+  console.log(req.user.id);
   const ticket = await Ticket.create({
     product,
     description,
-    user: request.user.id,
+    user: req.user.id,
     status: "new",
   });
 

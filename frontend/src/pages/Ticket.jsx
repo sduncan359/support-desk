@@ -1,4 +1,4 @@
-import { useDispatch, useSelector, useState } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import BackButton from "../components/BackButton";
 import { getTicket, closeTicket } from "../features/tickets/ticketSlice";
 import {
@@ -8,7 +8,7 @@ import {
 } from "../features/notes/noteSlice";
 import Spinner from "../components/Spinner";
 import { useParams, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Modal from "react-modal";
 import NoteItem from "../components/NoteItem";
